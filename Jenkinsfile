@@ -22,7 +22,7 @@ pipeline{
                                    when{
 
                                          not{
-                                              branch "maste"
+                                              branch "master"
 
                                             }
                                         }
@@ -31,6 +31,28 @@ pipeline{
                                          }
 
                                     }
+
+                stage ('Final'){
+                                parallel{
+                                         stage('test1'){
+                                                       steps{
+                                                             echo 'success'
+                                                            }
+                                                        }
+                                         stage('test2'){
+                                                       agent{
+                                                             docker{
+                                                                    reuseNode false
+                                                                    image 'ubuntu'
+                                                                    }
+                                                             }
+                                                        }
+                                          }
+
+
+
+                                         
+                                                         
 
                       
 
