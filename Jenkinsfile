@@ -40,12 +40,9 @@ pipeline{
                                                             }
                                                         }
                                          stage('test2'){
-                                                       agent{
-                                                             docker{
-                                                                    reuseNode false
-                                                                    image 'ubuntu'
-                                                                    }
-                                                             }
+                                                      steps{
+                                                             echo 'success1'
+                                                            }
                                                         }
                                           }
                                  }
