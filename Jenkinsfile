@@ -1,42 +1,42 @@
 pipeline{
-agent any{
-stages{
+     agent any{
+             stages{
 
-stage ('primary'){
-steps{
-echo 'hi'
-     }
+                stage ('primary'){
+                               steps{
+                                      echo 'hi'
+                                    }
+                                 }
+
+                stage ('secondary'){
+                               steps{
+
+                                     input('Do you want to proceed?')
+
+                                    }
+
+                                   }
+
+                stage ('condition'){
+
+                                   when{
+
+                                         not{
+                                              branch "maste"
+
+                                            }
+                                        }
+                                    steps{
+                                           echo 'fail'
+                                         }
+
+                                    }
+
+                      }
+
                  }
 
-stage ('secondary'){
-steps{
 
-input('Do you want to proceed?')
-
-}
-
-}
-
-stage ('condition'){
-
-when{
-
-not{
-branch "maste"
-
-   }
-}
-steps{
-echo 'fail'
-     }
-
-    }
-
-       }
-
-     }
-
-
- }
+        }
 
          
