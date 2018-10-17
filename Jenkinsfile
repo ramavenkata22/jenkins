@@ -15,7 +15,7 @@ input('Do you want to proceed?')
 
 }
 
-
+}
 
 stage ('condition'){
 
@@ -25,17 +25,18 @@ not{
 branch "maste"
 
    }
+}
 steps{
 echo 'fail'
      }
 
     }
 
-                    }
+       }
 
      }
 
 
-         }
+ }
 
-         }
+         
